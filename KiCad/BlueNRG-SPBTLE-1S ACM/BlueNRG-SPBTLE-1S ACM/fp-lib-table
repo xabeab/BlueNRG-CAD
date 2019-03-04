@@ -1,0 +1,5 @@
+(fp_lib_table
+  (lib (name SPBTLE-1S)(type KiCad)(uri ${KIPRJMOD}/SPBTLE-1S.pretty)(options "")(descr ""))
+  (lib (name LSM6DS3_footprint)(type KiCad)(uri "C:/Users/xbeau/OneDrive/Documents/Genie biomedical/Maitrise/Projet/CAD/Librairies/LSM6DS3_footprint")(options "")(descr ""))
+  (lib (name LSM6DS3)(type KiCad)(uri "C:/Users/xbeau/OneDrive/Documents/Genie biomedical/Maitrise/Projet/CAD/Librairies/LSM6DS3")(options "")(descr ""))
+)
