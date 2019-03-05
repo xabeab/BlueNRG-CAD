@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:BlueNRG-SPBTLE-1S ACM-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -46,7 +47,7 @@ U 1 1 5C7C2CC4
 P 2550 3750
 F 0 "J1" H 2577 3726 50  0000 L CNN
 F 1 "Conn_01x04_Female" H 2577 3635 50  0000 L CNN
-F 2 "SPBTLE-1S:JTAG-SWD-4PINS" H 2550 3750 50  0001 C CNN
+F 2 "Socket_Strips:Socket_Strip_Straight_1x04_Pitch2.00mm" H 2550 3750 50  0001 C CNN
 F 3 "~" H 2550 3750 50  0001 C CNN
 	1    2550 3750
 	1    0    0    -1  
@@ -62,7 +63,7 @@ F 3 "~" V 3550 2810 50  0001 C CNN
 	1    3550 2750
 	1    0    0    -1  
 $EndComp
-Text GLabel 3550 2350 1    50   Input ~ 0
+Text GLabel 3650 2350 3    50   Input ~ 0
 Vdd
 $Comp
 L power:GND #PWR03
@@ -237,7 +238,7 @@ L Device:R R2
 U 1 1 5C7C52BC
 P 8600 3200
 F 0 "R2" H 8670 3246 50  0000 L CNN
-F 1 "47k" H 8670 3155 50  0000 L CNN
+F 1 "100k" H 8670 3155 50  0000 L CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 8530 3200 50  0001 C CNN
 F 3 "~" H 8600 3200 50  0001 C CNN
 	1    8600 3200
@@ -391,11 +392,11 @@ Wire Wire Line
 Connection ~ 4550 5800
 Wire Wire Line
 	4550 6200 4550 6400
-Text GLabel 1950 3650 0    50   Input ~ 0
+Text GLabel 2100 3950 0    50   Input ~ 0
 JTCK-SWCTK
-Text GLabel 1950 3750 0    50   Input ~ 0
+Text GLabel 2100 3850 0    50   Input ~ 0
 JTMS-SWTDIO
-Text GLabel 1900 3950 0    50   Input ~ 0
+Text GLabel 1850 3650 0    50   Input ~ 0
 Vdd
 $Comp
 L power:GND #PWR02
@@ -408,12 +409,166 @@ F 3 "" H 1250 3850 50  0001 C CNN
 	1    1250 3850
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J2
+U 1 1 5C7EB1F7
+P 3550 2150
+F 0 "J2" V 3516 1962 50  0000 R CNN
+F 1 "Conn_01x03" V 3425 1962 50  0000 R CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 3550 2150 50  0001 C CNN
+F 3 "~" H 3550 2150 50  0001 C CNN
+	1    3550 2150
+	0    -1   -1   0   
+$EndComp
+Text GLabel 3100 2600 2    50   Input ~ 0
+Vdd
+$Comp
+L Regulator_Linear:TLV70033_SOT23-5 U3
+U 1 1 5C7EE612
+P 2600 2700
+F 0 "U3" H 2600 3042 50  0000 C CNN
+F 1 "TLV70033_SOT23-5" H 2600 2951 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 2600 3025 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/tlv700.pdf" H 2600 2750 50  0001 C CNN
+	1    2600 2700
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	2350 3650 1950 3650
+	3450 2350 2600 2350
 Wire Wire Line
-	1950 3750 2350 3750
+	2150 2350 2150 2600
 Wire Wire Line
-	2350 3850 1250 3850
+	2150 2600 2300 2600
 Wire Wire Line
-	2350 3950 1900 3950
+	3100 2600 3000 2600
+$Comp
+L power:GND #PWR012
+U 1 1 5C7F00B0
+P 2600 3150
+F 0 "#PWR012" H 2600 2900 50  0001 C CNN
+F 1 "GND" H 2605 2977 50  0000 C CNN
+F 2 "" H 2600 3150 50  0001 C CNN
+F 3 "" H 2600 3150 50  0001 C CNN
+	1    2600 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 3000 2600 3150
+Text GLabel 2150 2700 0    50   Input ~ 0
+Vdd
+Wire Wire Line
+	2300 2700 2150 2700
+$Comp
+L Device:C C7
+U 1 1 5C7F392C
+P 3000 2900
+F 0 "C7" H 3115 2946 50  0000 L CNN
+F 1 "1u" H 3115 2855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3038 2750 50  0001 C CNN
+F 3 "~" H 3000 2900 50  0001 C CNN
+	1    3000 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR013
+U 1 1 5C7F39B4
+P 3000 3150
+F 0 "#PWR013" H 3000 2900 50  0001 C CNN
+F 1 "GND" H 3005 2977 50  0000 C CNN
+F 2 "" H 3000 3150 50  0001 C CNN
+F 3 "" H 3000 3150 50  0001 C CNN
+	1    3000 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 2600 3000 2750
+Connection ~ 3000 2600
+Wire Wire Line
+	3000 2600 2900 2600
+Wire Wire Line
+	3000 3050 3000 3150
+$Comp
+L Device:C C6
+U 1 1 5C7F5837
+P 2600 2000
+F 0 "C6" H 2715 2046 50  0000 L CNN
+F 1 "1u" H 2715 1955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2638 1850 50  0001 C CNN
+F 3 "~" H 2600 2000 50  0001 C CNN
+	1    2600 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR011
+U 1 1 5C7F58C4
+P 2600 1650
+F 0 "#PWR011" H 2600 1400 50  0001 C CNN
+F 1 "GND" H 2605 1477 50  0000 C CNN
+F 2 "" H 2600 1650 50  0001 C CNN
+F 3 "" H 2600 1650 50  0001 C CNN
+	1    2600 1650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2600 1650 2600 1850
+Wire Wire Line
+	2600 2150 2600 2350
+Connection ~ 2600 2350
+Wire Wire Line
+	2600 2350 2150 2350
+Wire Wire Line
+	1850 3650 2350 3650
+Wire Wire Line
+	2350 3750 1250 3750
+Wire Wire Line
+	1250 3750 1250 3850
+Wire Wire Line
+	2350 3850 2100 3850
+Wire Wire Line
+	2350 3950 2100 3950
+$Comp
+L Switch:SW_Push_Dual TL3305A1
+U 1 1 5C7F3079
+P 9450 3750
+F 0 "TL3305A1" V 9496 3462 50  0000 R CNN
+F 1 "SW_Push_Dual" V 9405 3462 50  0000 R CNN
+F 2 "Button_Switch_SMD:SW_SPST_TL3305A" H 9450 3950 50  0001 C CNN
+F 3 "" H 9450 3950 50  0001 C CNN
+	1    9450 3750
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8600 3550 9450 3550
+Wire Wire Line
+	9450 3550 9650 3550
+Connection ~ 9450 3550
+Wire Wire Line
+	9450 3950 9650 3950
+$Comp
+L Device:R R3
+U 1 1 5C7F6ACD
+P 9650 4250
+F 0 "R3" H 9720 4296 50  0000 L CNN
+F 1 "100k" H 9720 4205 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 9580 4250 50  0001 C CNN
+F 3 "~" H 9650 4250 50  0001 C CNN
+	1    9650 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR014
+U 1 1 5C7F6B3B
+P 9650 4500
+F 0 "#PWR014" H 9650 4250 50  0001 C CNN
+F 1 "GND" H 9655 4327 50  0000 C CNN
+F 2 "" H 9650 4500 50  0001 C CNN
+F 3 "" H 9650 4500 50  0001 C CNN
+	1    9650 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9650 3950 9650 4100
+Connection ~ 9650 3950
+Wire Wire Line
+	9650 4400 9650 4500
 $EndSCHEMATC
