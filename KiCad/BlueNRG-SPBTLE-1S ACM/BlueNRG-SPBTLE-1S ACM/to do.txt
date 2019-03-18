@@ -1,0 +1,2 @@
+Vdd to SPTBLE
+Circuit logic for the power IC. ON pin should be connected directly to the battery vdd
