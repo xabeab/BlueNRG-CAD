@@ -454,8 +454,6 @@ F 3 "" H 2600 3150 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2600 3000 2600 3150
-Text GLabel 2150 2700 0    50   Input ~ 0
-Vdd
 Wire Wire Line
 	2300 2700 2150 2700
 $Comp
@@ -571,4 +569,11 @@ Wire Wire Line
 Connection ~ 9650 3950
 Wire Wire Line
 	9650 4400 9650 4500
+Text GLabel 4250 3850 1    50   Input ~ 0
+Vdd
+Wire Wire Line
+	4250 3850 4250 4200
+Wire Wire Line
+	2150 2700 2150 2600
+Connection ~ 2150 2600
 $EndSCHEMATC
