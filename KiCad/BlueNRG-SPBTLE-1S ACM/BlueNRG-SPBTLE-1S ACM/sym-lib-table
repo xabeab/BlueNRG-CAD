@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name BlueNRG-SPBTLE-1S-ACM-rescue)(type Legacy)(uri "${KIPRJMOD}/BlueNRG-SPBTLE-1S ACM-rescue.lib")(options "")(descr ""))
+)

@@ -1,6 +1,6 @@
 EESchema Schematic File Version 4
 LIBS:BlueNRG-SPBTLE-1S ACM-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L LSM6DS3:LSM6DS3 U1
+L BlueNRG-SPBTLE-1S-ACM-rescue:LSM6DS3-LSM6DS3 U1
 U 1 1 5C7C28DD
 P 2650 6100
 F 0 "U1" H 2650 6767 50  0000 C CNN
@@ -28,17 +28,6 @@ F 6 "" H 2650 6100 50  0001 L BNN "Field6"
 F 7 "iNEMO inertial module: 3D accelerometer and 3D gyroscope" H 2650 6100 50  0001 L BNN "Field7"
 F 8 "STMicroelectronics" H 2650 6100 50  0001 L BNN "Field8"
 	1    2650 6100
-	1    0    0    -1  
-$EndComp
-$Comp
-L Custom~Library:SPBTLE-1S U2
-U 1 1 5C7C2BC4
-P 5900 3850
-F 0 "U2" H 5875 4728 50  0000 C CNN
-F 1 "SPBTLE-1S" H 5875 4637 50  0000 C CNN
-F 2 "SPBTLE-1S:SPBTLE-1S" H 5550 3750 50  0001 C CNN
-F 3 "" H 5550 3750 50  0001 C CNN
-	1    5900 3850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -80,19 +69,10 @@ Wire Wire Line
 	3550 2550 3550 2350
 Wire Wire Line
 	3550 2850 3550 3050
-NoConn ~ 5850 3150
-NoConn ~ 5650 3150
-NoConn ~ 5450 3150
 Text GLabel 6450 4800 3    50   Input ~ 0
 JTMS-SWTDIO
 Text GLabel 6250 4800 3    50   Input ~ 0
 JTCK-SWCTK
-Wire Wire Line
-	6450 4500 6450 4800
-Wire Wire Line
-	6250 4500 6250 4800
-NoConn ~ 6650 4500
-NoConn ~ 5650 4500
 $Comp
 L power:GND #PWR09
 U 1 1 5C7C3117
@@ -104,8 +84,6 @@ F 3 "" H 5450 4700 50  0001 C CNN
 	1    5450 4700
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5450 4500 5450 4700
 $Comp
 L Device:LED D1
 U 1 1 5C7C3189
@@ -140,13 +118,9 @@ F 3 "~" H 5250 4850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5250 4500 5250 4700
-Wire Wire Line
 	5250 5000 5250 5150
 Wire Wire Line
 	5250 5450 5250 5650
-NoConn ~ 5050 4500
-NoConn ~ 5850 4500
 $Comp
 L Device:C C1
 U 1 1 5C7C3846
@@ -181,8 +155,6 @@ F 3 "" H 3800 4750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4650 4200 4250 4200
-Wire Wire Line
 	3800 4200 3800 4250
 Wire Wire Line
 	4250 4200 4250 4250
@@ -194,23 +166,12 @@ Wire Wire Line
 Wire Wire Line
 	3800 4550 4250 4550
 Connection ~ 3800 4550
-NoConn ~ 4650 3800
-NoConn ~ 4650 4000
-NoConn ~ 4650 3400
-NoConn ~ 4650 3600
 Text GLabel 7450 4150 2    50   Input ~ 0
 SPI_CLK
-Wire Wire Line
-	7450 4150 7100 4150
 Text GLabel 7450 3700 2    50   Input ~ 0
 SPI_CS
-NoConn ~ 6050 4500
-Wire Wire Line
-	7450 3700 7100 3700
 Text GLabel 7450 3400 2    50   Input ~ 0
 DIO12-INT
-Wire Wire Line
-	7450 3400 7100 3400
 $Comp
 L Device:C C5
 U 1 1 5C7C50EF
@@ -252,17 +213,11 @@ Wire Wire Line
 	8600 3350 8600 3550
 Wire Wire Line
 	8600 3850 8600 4100
-Wire Wire Line
-	7100 3550 8600 3550
 Connection ~ 8600 3550
 Text GLabel 7450 3850 2    50   Input ~ 0
 SPI_IN
 Text GLabel 7450 4000 2    50   Input ~ 0
 SPI_OUT
-Wire Wire Line
-	7450 3850 7100 3850
-Wire Wire Line
-	7450 4000 7100 4000
 Text GLabel 1300 6000 0    50   Input ~ 0
 SPI_OUT
 Text GLabel 1300 5850 0    50   Input ~ 0
@@ -454,8 +409,6 @@ F 3 "" H 2600 3150 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2600 3000 2600 3150
-Text GLabel 2150 2700 0    50   Input ~ 0
-Vdd
 Wire Wire Line
 	2300 2700 2150 2700
 $Comp
@@ -571,4 +524,56 @@ Wire Wire Line
 Connection ~ 9650 3950
 Wire Wire Line
 	9650 4400 9650 4500
+Text GLabel 4250 3850 1    50   Input ~ 0
+Vdd
+Wire Wire Line
+	4250 3850 4250 4200
+Wire Wire Line
+	2150 2700 2150 2600
+Connection ~ 2150 2600
+$Comp
+L BlueNRG-SPBTLE-1S-ACM-rescue:SPBTLE-1S-Custom_Library U?
+U 1 1 5CD1E063
+P 5900 3850
+F 0 "U?" H 5875 4731 50  0000 C CNN
+F 1 "SPBTLE-1S-Custom_Library" H 5875 4640 50  0000 C CNN
+F 2 "" H 5550 3750 50  0001 C CNN
+F 3 "" H 5550 3750 50  0001 C CNN
+	1    5900 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 4200 4650 4200
+Wire Wire Line
+	5250 4500 5250 4700
+Wire Wire Line
+	6250 4500 6250 4800
+Wire Wire Line
+	6450 4500 6450 4800
+Wire Wire Line
+	7100 4150 7450 4150
+Wire Wire Line
+	7450 4000 7100 4000
+Wire Wire Line
+	7100 3850 7450 3850
+Wire Wire Line
+	7450 3700 7100 3700
+Wire Wire Line
+	7100 3550 8600 3550
+Wire Wire Line
+	7450 3400 7100 3400
+NoConn ~ 5850 3150
+NoConn ~ 5650 3150
+NoConn ~ 5450 3150
+NoConn ~ 4650 3400
+NoConn ~ 4650 3600
+NoConn ~ 4650 3800
+NoConn ~ 4650 4000
+NoConn ~ 5050 4500
+NoConn ~ 5650 4500
+NoConn ~ 5850 4500
+NoConn ~ 6050 4500
+Wire Wire Line
+	5450 4500 5450 4700
+NoConn ~ 6650 4500
 $EndSCHEMATC
