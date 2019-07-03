@@ -1,7 +1,0 @@
-### Module positions - created on 6/13/2019 12:33:48 PM ###
-### Printed by Pcbnew version kicad (5.0.2)-1
-## Unit = mm, Angle = deg.
-## Side : bottom
-# Ref     Val           Package                               PosX       PosY       Rot  Side
-BT1       Battery_Cell  BatteryHolder_MPD_BC2003_1x2032  -150.1140   -82.3290  270.0000  bottom
-## End
